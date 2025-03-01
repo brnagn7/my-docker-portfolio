@@ -1,0 +1,43 @@
+# Composer #
+############
+vendor/
+composer.lock
+
+# Logs and temporary files #
+############################
+*.log
+*.cache
+*.tmp
+*.temp
+
+# Environment variables #
+#########################
+.env
+.env.local
+.env.*.local
+
+# OS generated files #
+######################
+.DS_Store
+Thumbs.db
+
+# IDEs and editors #
+####################
+.idea/
+.vscode/
+
+# Cache and session files #
+###########################
+cache/
+sessions/
+
+# Build artifacts #
+###################
+build/
+dist/
+
+# Other #
+#########
+*.bak
+*.swp
+*.swo
