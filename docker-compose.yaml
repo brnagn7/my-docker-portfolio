@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 version: '3.8'
+=======
+version: '1.0'
+>>>>>>> 2fb78b6bf884a0ec22dee4a6cccd257dbeb89837
 services:
   # nginx
   web:
@@ -7,12 +11,15 @@ services:
       - "80:80"
     volumes:
       - ./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+<<<<<<< HEAD
       - ./app:/var/www/html
     depends_on:
       - app
     networks:
       - frontend
       - backend
+=======
+>>>>>>> 2fb78b6bf884a0ec22dee4a6cccd257dbeb89837
   # php
   app:
     build:
@@ -32,24 +39,32 @@ services:
       XDEBUG_MODE: "${XDEBUG_MODE:-off}"
     extra_hosts:
       - host.docker.internal:host-gateway
+<<<<<<< HEAD
     networks:
       - backend
     depends_on:
       - db
       - cache
+=======
+>>>>>>> 2fb78b6bf884a0ec22dee4a6cccd257dbeb89837
   # mysql
   db:
     image: mysql:8.0
     volumes:
       - mysqldata:/var/lib/mysql
     ports:
+<<<<<<< HEAD
       - "3307:3306"
+=======
+      - "3306:3306"
+>>>>>>> 2fb78b6bf884a0ec22dee4a6cccd257dbeb89837
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
+<<<<<<< HEAD
     networks:
       - backend
   # redis
@@ -70,3 +85,11 @@ volumes:
 networks:
   frontend:
   backend:
+=======
+  # redis
+  cache:
+    image: redis:latest
+
+volumes:
+  mysqldata:
+>>>>>>> 2fb78b6bf884a0ec22dee4a6cccd257dbeb89837
